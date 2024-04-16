@@ -85,5 +85,5 @@ Thumbs.db
 *.mov
 *.wmv
 
-#Paths logs
-.yarn
+#JSON file to test the project on postman extension
+/TestOnPostman
