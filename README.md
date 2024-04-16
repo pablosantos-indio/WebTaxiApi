@@ -1,5 +1,5 @@
-# nest-99
-
+# Web Taxi API
+Backend of a taxi application, similar to Uber, developed with Node.js using the Nest.js framework.
 
 
 ## Getting started
