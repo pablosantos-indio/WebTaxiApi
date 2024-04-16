@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { AuthRequestDto } from './dto/auth-request.dto';
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
@@ -28,6 +28,6 @@ export class AuthService {
       }
     }
 
-    return 'It was not possible to log in. Please check the data and try again.';
+    throw new NotFoundException('It was not possible to log in. Please check the data and try again.');
   }
 }

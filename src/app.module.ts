@@ -3,6 +3,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
 import * as dotenv from 'dotenv';
 import { AuthModule } from './auth/auth.module';
+import { TripModule } from './trip/trip.module';
+import { DriverModule } from './driver/driver.module';
 dotenv.config();
 
 @Module({
@@ -20,13 +22,12 @@ dotenv.config();
           synchronize: false,
           logging: 'all',
           entities: [`${__dirname}/**/*.entity{.ts,.js}`],
-          // entities: [
-          //     `./src/**/*.entity{.ts,.js}`,
-          // ],
       }),
     }),
       UserModule,
       AuthModule,
+      TripModule,
+      DriverModule,
   ],
   controllers: [],
   providers: [],

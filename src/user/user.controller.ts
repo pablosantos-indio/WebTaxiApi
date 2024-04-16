@@ -19,16 +19,16 @@ export class UserController {
 
   @Get(':id')
   async findOne(@Param('id') id: string) {
-    return this.userService.findOne(id);
+    return this.userService.findOne(+id);
   }
 
   @Put(':id')
   async update(@Param('id') id: string, @Body() dto: UserRequestDto): Promise<string> {
-    return await this.userService.update(id, dto);
+    return await this.userService.update(+id, dto);
   }
 
   @Delete(':id')
   async delete(@Param('id') id: string): Promise<string> {
-    return await this.userService.delete(id);
+    return await this.userService.sofDelete(+id);
   }
 }

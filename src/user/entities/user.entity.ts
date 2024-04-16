@@ -1,9 +1,9 @@
-import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('user')
 export class User {
   @PrimaryGeneratedColumn('increment')
-  id: string;
+  id: number;
 
   @Column()
   firstName: string;
@@ -19,5 +19,8 @@ export class User {
 
   @Column()
   password: string;
+
+  @Column({ type: 'timestamp'})
+  deletedAt: Date;
 
 }
