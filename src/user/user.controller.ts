@@ -8,8 +8,8 @@ export class UserController {
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
-  async create(@Body() dto: UserRequestDto): Promise<void> {
-    await this.userService.create(dto);
+  async create(@Body() dto: UserRequestDto): Promise<string> {
+    return await this.userService.create(dto);
   }
 
   @Get()
@@ -23,12 +23,12 @@ export class UserController {
   }
 
   @Put(':id')
-  async update(@Param('id') id: string, @Body() dto: UserRequestDto) {
-    await this.userService.update(id, dto);
+  async update(@Param('id') id: string, @Body() dto: UserRequestDto): Promise<string> {
+    return await this.userService.update(id, dto);
   }
 
   @Delete(':id')
-  async delete(@Param('id') id: string) {
-    await this.userService.delete(id);
+  async delete(@Param('id') id: string): Promise<string> {
+    return await this.userService.delete(id);
   }
 }
